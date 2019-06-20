@@ -18,7 +18,19 @@ class Painel extends Component {
     }
 
     calcular() {
-        const resultado = parseFloat(this.state.num1) + parseFloat(this.state.num2);
+        let resultado = 0;
+        
+        switch (this.state.operacao) {
+            case 'soma':
+                resultado = parseFloat(this.state.num1) + parseFloat(this.state.num2);
+                break;
+            case 'subtracao':
+                resultado = parseFloat(this.state.num1) - parseFloat(this.state.num2);
+                break;
+            default: 
+                resultado = 0;
+        }
+
         console.log(resultado);
     }
 
